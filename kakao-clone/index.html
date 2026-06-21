@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>KakaoTalk Clone</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app">
+    <aside class="sidebar">
+      <div class="sidebar-header">카카오톡</div>
+      <ul class="chat-list"></ul>
+    </aside>
+    <main class="chat">
+      <header class="chat-header">
+        <span class="chat-title">선택된 채팅방</span>
+        <span class="chat-subtitle">0</span>
+        <button id="logoutBtn" type="button" class="logout-btn">로그아웃</button>
+      </header>
+      <section class="messages"></section>
+      <footer class="composer">
+        <input type="text" placeholder="메시지를 입력하세요" />
+        <button>전송</button>
+      </footer>
+    </main>
+  </div>
+  <script>
+    try {
+      const raw = localStorage.getItem("chat_session");
+      if (!raw) window.location.replace("login.html");
+      const session = JSON.parse(raw);
+      document.documentElement.dataset.loginEmail = session.user?.email || "";
+      document.documentElement.dataset.loginName = session.user?.name || "";
+    } catch {
+      window.location.replace("login.html");
+    }
+  </script>
+  <script src="script.js"></script>
+</body>
+</html>

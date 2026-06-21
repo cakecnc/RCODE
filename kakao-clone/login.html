@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>KakaoTalk Login</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="login.css" />
+</head>
+<body>
+  <div class="login-wrap">
+    <div class="login-card">
+      <h1>카카오톡</h1>
+      <p class="login-desc">서비스 이용을 위해 로그인해 주세요.</p>
+      <form id="loginForm" autocomplete="on">
+        <label>
+          <span>이메일</span>
+          <input type="email" id="email" placeholder="you@example.com" required />
+        </label>
+        <label>
+          <span>비밀번호</span>
+          <input type="password" id="password" placeholder="••••••••" required minlength="8" />
+        </label>
+        <button type="submit" class="btn-primary">로그인</button>
+      <button type="button" id="kakaoLoginBtn" class="kakao-btn">카카오톡으로 로그인</button>
+      </form>
+      <p class="login-note">데모 계정: demo@example.com / demo1234</p>
+    </div>
+  </div>
+  <script src="login.js"></script>
+</body>
+</html>
